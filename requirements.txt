@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+GitPython
+requests
+pycg
+libcst
+python-dotenv
