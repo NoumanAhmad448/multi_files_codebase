@@ -55,10 +55,9 @@ Use the following `curl` command to test the API:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/analyze/" \
--H "Content-Type: application/json" \
 -d '{
   "function_name": "extract_semantic_context_libcst",
-  "file_path": "B:/multi_files_codebase/src/sementic_analysis.py",
+  "file_path": "B:/multi_files_codebase/multi_files_codebase/src//sementic_analysis.py",
   "issue_description": "The function lacks error handling.",
   "request": "Suggest improvements for this function.",
   "categories": "data_preprocessing"

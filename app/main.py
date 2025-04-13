@@ -56,7 +56,7 @@ async def analyze_code(request: UserRequest):
     if not function_code:
         raise HTTPException(
             status_code=404,
-            detail=f"Function {request.function_name} not found in the specified file.",
+            detail=f"Function {request.function_name} not found in the specified file {request.file_path}.",
         )
 
     # unused_imports = find_unused_imports(request.file_path)
