@@ -8,7 +8,10 @@ from src.dependency_analysis import (
     fetch_code_from_branch,
 )
 from src.llm_integration import query_llm
-from src.sementic_analysis import extract_semantic_context_libcst
+from src.sementic_analysis import (
+    extract_semantic_context_libcst,
+    extract_calls_and_definitions,
+)
 from app.schemas import UserRequest
 from src.load_env import env
 import os
@@ -37,9 +40,9 @@ async def analyze_code(request: UserRequest):
         git_successuful = (
             fetch_code_from_branch(
                 repo_path=request.repo_path or repo_path,
-                branch_name=request.branch_name or os.getenv("REPO_PATH"),
+                branch_name=request.branch_name or os.getenv("BRANCH_NAME"),
                 tag_name=request.tag_name or os.getenv("TAG_NAME"),
-                commit_hash=request.commit_hash,
+                commit_hash=request.commit_hash or os.getenv("COMMIT_HASH"),
             )
             or os.getenv("COMMIT_HASH"),
         )
@@ -50,7 +53,7 @@ async def analyze_code(request: UserRequest):
             )
 
     # Extract function code
-    function_code = extract_function_code(request.file_path, request.function_name)
+    function_code, target_function, extract_file = extract_function_code(request.file_path, request.function_name)
     # print(function_code)
 
     if not function_code:
@@ -73,11 +76,22 @@ async def analyze_code(request: UserRequest):
     # Semantic Context
     semantic_info = extract_semantic_context_libcst(request.file_path)
 
+    funs_classes = extract_calls_and_definitions(extract_file, target_function, os.getenv("PROJECT_ROOT"))
+    # print(funs_classes)
+
+    semantic_info["functions"]  = funs_classes["functions"]
+    semantic_info["classes"] = funs_classes["classes"]
+    semantic_info["definitions"] = funs_classes["definitions"]
+
     # Cross-File Relationships
     cross_file_relationship = extract_cross_file_relationships(request.file_path)
 
     metadata = get_file_metadata(request.file_path)
-
+    request.request = request.request+"""
+             You are supposed to take this instruction very carefully and observe
+            all the extra parameters provided and make
+            a unique optimized decision e.g. if docstring or comments are missing, add them. \n
+            """
     # Construct a deep prompt
     prompt = (
         f"function_name: {request.function_name}\n"
@@ -110,14 +124,27 @@ async def analyze_code(request: UserRequest):
 
     return {
         "message": "Deep prompt generated for manual refinement.",
+        "deep_object": {
+            "function_name": request.function_name,
+            "issue_description": request.issue_description,
+            "request": request.request,
+            "dependencies": dependencies,
+            "function_code": function_code,
+            "metadata": metadata,
+            "semantic_info": semantic_info,
+            "cross_file_relationship": cross_file_relationship,
+            "categories": CATEGORIES.get(request.categories),
+        },
         "deep_prompt": craft_prompt(
             request.function_name,
             request.issue_description,
             request.request,
-            ",".join(dependencies),
+            dependencies,
             function_code,
             metadata,
             semantic_info,
             cross_file_relationship,
+            categories=request.categories,
+            CATEGORIES=CATEGORIES,
         ),
     }

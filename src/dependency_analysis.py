@@ -111,14 +111,16 @@ def find_unused_imports(file_path):
 
 def fetch_code_from_branch(repo_path, branch_name, tag_name, commit_hash):
     try:
+        print(f"Fetching code from branch: {branch_name}, tag: {tag_name}, commit: {commit_hash}")
         # Open the repository
         repo = git.Repo(repo_path)
 
+        branch = branch_name or tag_name or commit_hash
         # Checkout the specified branch
-        if branch_name or tag_name or commit_hash:
-            repo.git.checkout(branch_name)
-
-        return True
+        if branch:
+            repo.git.checkout(branch)
+            return True
+        return False
     except Exception as e:
         print(f"Error fetching code from branch: {e}")
         return False
@@ -177,7 +179,7 @@ def craft_prompt(
         for key, value in semantic_info.items():
             prompt += f"    {key}: {value}\n"
     else:
-        prompt += "    No semantic information available.\n"
+        prompt += "    No semantic information available. Please provide code related semantic information like comments and docstring.\n"
 
     # Add cross-file relationships
     prompt += "cross_file_relationship:\n"
