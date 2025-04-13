@@ -2,7 +2,7 @@ import libcst as cst
 
 
 def extract_semantic_context_libcst(file_path):
-    """Extract comments, docstrings, and variable names using libcst."""
+    """Extract comments, docstrings, and variable names using libcst.some extra comment here"""
     try:
         with open(file_path, "r") as file:
             source_code = file.read()

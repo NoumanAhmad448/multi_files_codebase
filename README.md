@@ -47,7 +47,8 @@ Send a JSON payload with the following fields:
 | `categories`        | String | (Optional) A category key to classify the function (e.g., "data_preprocessing"). |
 
 For complete list visit ```schemas.py``` file and check ```UserRequest```
-POV: ```Please note that .env file is being used and but don't get proritized over API params.```
+POV: ```Please note that .env file is being used however it doesn't get proritized over API params. You have a choice to mention either use
+.env file or you may pass params.```
 
 #### Example Request
 
