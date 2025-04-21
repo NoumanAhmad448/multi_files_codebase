@@ -1,4 +1,6 @@
 # API Documentation
+<div align="center">
+<img role="button" tabindex="0" id="modal-965287557-trigger" aria-controls="modal-965287557" aria-expanded="false" class="doi-modal-trigger block m-0" src="https://zenodo.org/badge/DOI/10.5281/zenodo.15257762.svg" alt="DOI: 10.5281/zenodo.15257762"></div>
 
 ## Overview
 This API provides functionality to analyze Python code files based on specific criteria such as function definitions, dependencies, metadata, and semantic context. It supports categorization of code and fetching relevant details to assist in debugging, refactoring, or improving code quality.
