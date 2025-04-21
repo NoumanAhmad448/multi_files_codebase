@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Ahmad
+    given-names: Nouman
+title: "multi files codebase"
+version: "1.0.0"
+doi: "10.5281/zenodo.15257762"
+date-released: 2025-04-21
+url: "https://github.com/NoumanAhmad448/multi_files_codebase"
