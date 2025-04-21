@@ -158,10 +158,6 @@ This API simplifies the process of analyzing Python functions by extracting thei
 
 Let me know if you need further refinements! 🚀
 
-Ah gotcha! You're referring to the conventional citation **heading** like people usually add near the bottom of their GitHub README. Here's how you can do it in a clean and conventional way:
-
----
-
 ## 📖 Citation
 
 If you use this codebase in your research or projects, please cite it as follows:
