@@ -157,3 +157,41 @@ Ensure the JSON payload is valid. For example, missing commas or quotes can caus
 This API simplifies the process of analyzing Python functions by extracting their code, dependencies, metadata, and relationships. Use the provided examples and troubleshooting tips to integrate it into your workflow effectively.
 
 Let me know if you need further refinements! 🚀
+
+Ah gotcha! You're referring to the conventional citation **heading** like people usually add near the bottom of their GitHub README. Here's how you can do it in a clean and conventional way:
+
+---
+
+## 📖 Citation
+
+If you use this codebase in your research or projects, please cite it as follows:
+
+### 🔹 BibTeX
+```bibtex
+@misc{ahmad2025multifiles,
+  author       = {Nouman Ahmad},
+  title        = {multi files codebase},
+  year         = {2025},
+  howpublished = {\url{https://github.com/NoumanAhmad448/multi_files_codebase}},
+  note         = {Accessed: 2025-04-21}
+}
+```
+
+### 🔹 LaTeX `\bibitem`
+```latex
+\bibitem{nouman2025multifiles}
+Nouman Ahmad.
+\newblock \textit{multi files codebase}.
+\newblock GitHub repository, 2025. Available at: \url{https://github.com/NoumanAhmad448/multi_files_codebase}
+```
+
+### 🔹 EndNote (RIS)
+```ris
+TY  - COMP
+AU  - Ahmad, Nouman
+TI  - multi files codebase
+PY  - 2025
+UR  - https://github.com/NoumanAhmad448/multi_files_codebase
+ER  -
+```
+
