@@ -167,7 +167,7 @@ If you use this codebase in your research or projects, please cite it as follows
 ### 🔹 BibTeX
 ```bibtex
 @misc{ahmad2025multifiles,
-  author       = {Nouman Ahmad},
+  author       = {Nouman Ahmad, Changsheng Zhang},
   title        = {multi files codebase},
   year         = {2025},
   howpublished = {\url{https://github.com/NoumanAhmad448/multi_files_codebase}},
