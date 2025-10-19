@@ -165,31 +165,35 @@ Let me know if you need further refinements! 🚀
 If you use this codebase in your research or projects, please cite it as follows:
 
 ### 🔹 BibTeX
-```bibtex
-@misc{ahmad2025multifiles,
-  author       = {Nouman Ahmad, Changsheng Zhang},
-  title        = {multi files codebase},
-  year         = {2025},
-  howpublished = {\url{https://github.com/NoumanAhmad448/multi_files_codebase}},
-  note         = {Accessed: 2025-04-21}
-}
-```
-
-### 🔹 LaTeX `\bibitem`
-```latex
-\bibitem{nouman2025multifiles}
-Nouman Ahmad.
-\newblock \textit{multi files codebase}.
-\newblock GitHub repository, 2025. Available at: \url{https://github.com/NoumanAhmad448/multi_files_codebase}
+```@INPROCEEDINGS{11182836,
+  author={Ahmad, Nouman and Zhang, Changsheng},
+  booktitle={2025 5th International Conference on Artificial Intelligence, Big Data and Algorithms (CAIBDA)}, 
+  title={Enhancing LLMs Interactions for Python: A Smart API Framework for Extracting and Utilizing Semantic Code Information}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={385-388},
+  keywords={Measurement;Codes;Navigation;Large language models;Semantics;Manuals;Metadata;Data mining;Prompt engineering;Software development management;Prompt Engineering;Semantic Code Analysis;LLM Interactions},
+  doi={10.1109/CAIBDA65784.2025.11182836}}
 ```
 
 ### 🔹 EndNote (RIS)
-```ris
-TY  - COMP
-AU  - Ahmad, Nouman
-TI  - multi files codebase
+```TY  - CONF
+TI  - Enhancing LLMs Interactions for Python: A Smart API Framework for Extracting and Utilizing Semantic Code Information
+T2  - 2025 5th International Conference on Artificial Intelligence, Big Data and Algorithms (CAIBDA)
+SP  - 385
+EP  - 388
+AU  - N. Ahmad
+AU  - C. Zhang
 PY  - 2025
-UR  - https://github.com/NoumanAhmad448/multi_files_codebase
-ER  -
+DO  - 10.1109/CAIBDA65784.2025.11182836
+JO  - 2025 5th International Conference on Artificial Intelligence, Big Data and Algorithms (CAIBDA)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 5th International Conference on Artificial Intelligence, Big Data and Algorithms (CAIBDA)
+Y1  - 20-22 June 2025
+ER  - 
 ```
 
